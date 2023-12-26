@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCOS Detection and Segmentation Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .image-container div {
+        text-align: center;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      .image-container img {
+        max-width: 400px;
+        height: auto;
+        margin: 0 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var upload = "{{uploaded_image}}";
+      var predict = "{{predicted_image}}";
+      console.log(upload);
+      console.log(predict);
+    </script>
+    <div class="container">
+      <h2>PCOS Detection and Segmentation</h2>
+      <div class="image-container">
+        <div>
+          <h3>Uploaded Image</h3>
+          <img
+            src="{{url_for('static', filename=uploaded_image)}}"
+            alt="Uploaded Image"
+          />
+        </div>
+        <div>
+          <h3>Predicted Image</h3>
+          <img
+            src="{{url_for('static', filename=predicted_image)}}"
+            alt="Predicted Image"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
